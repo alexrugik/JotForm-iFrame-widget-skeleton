@@ -3,7 +3,7 @@
 		
 		this.init = init;
 		this.getData = getData;
-		var widget = JFCustomWidget;
+		var jfwidget = JFCustomWidget;
 		var defaultSettings = {
 
 		}
@@ -49,7 +49,7 @@
  		* @return undefined
  		*/
 		function sendData() {
-			widget.sendData(getData());
+			jfwidget.sendData(getData());
 		}
 
 		/**
@@ -70,7 +70,7 @@
  		* @return undefined
  		*/
 		function widgetResize(height, width) {
-			widget.requestWidgetResize({
+			jfwidget.requestWidgetResize({
 				height: height,
 				width: width
 			});
@@ -88,6 +88,18 @@
 			$("#test2").on("change", function() {
 
 			});
+		}
+
+		/**
+ 		* adding trin for old ie
+ 		* @param {string} string
+ 		* @return string.trim();
+ 		*/
+		function trim(string) {
+			if (type String.prototype.trim !== "function") {
+				return string.replace(/^\s+|\s+$/g, '');
+			}
+			return string.trim();
 		}
 
 	}
