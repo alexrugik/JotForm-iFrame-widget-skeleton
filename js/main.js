@@ -3,7 +3,7 @@
 		
 		this.init = init;
 		this.getData = getData;
-		var jfwidget = JFCustomWidget;
+		var jfWidget = JFCustomWidget;
 		var defaultSettings = {
 
 		}
@@ -49,7 +49,7 @@
  		* @return undefined
  		*/
 		function sendData() {
-			jfwidget.sendData(getData());
+			jfWidget.sendData(getData());
 		}
 
 		/**
@@ -70,7 +70,7 @@
  		* @return undefined
  		*/
 		function widgetResize(height, width) {
-			jfwidget.requestWidgetResize({
+			jfWidget.requestWidgetResize({
 				height: height,
 				width: width
 			});
@@ -96,7 +96,7 @@
  		* @return string.trim();
  		*/
 		function trim(string) {
-			if (type String.prototype.trim !== "function") {
+			if (typeof String.prototype.trim !== "function") {
 				return string.replace(/^\s+|\s+$/g, '');
 			}
 			return string.trim();
@@ -105,10 +105,10 @@
 	}
 
 	window.Widget = __Widget;
-});
+})();
 
 
-$(doocument).ready() {
+$(doocument).ready(function(){
 	JFCustomWidget.subscribe("ready", function(formData) {
 		var params = JFCustomWidget.getWidgetSettings();
 		var widget = new Widget();
@@ -117,4 +117,4 @@ $(doocument).ready() {
 			JFCustomWidget.sendSubmit(widget.getData());
 		})
 	})
-}
+});
