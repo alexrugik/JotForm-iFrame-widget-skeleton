@@ -108,7 +108,7 @@
 })();
 
 
-$(doocument).ready(function(){
+$(document).ready(function(){
 	JFCustomWidget.subscribe("ready", function(formData) {
 		var params = JFCustomWidget.getWidgetSettings();
 		var widget = new Widget();
