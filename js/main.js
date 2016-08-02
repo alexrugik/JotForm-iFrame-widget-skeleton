@@ -1,6 +1,8 @@
+
+"use strict";
 (function(){
 	function __Widget() {
-		
+
 		this.init = init;
 		this.getData = getData;
 		var jfWidget = JFCustomWidget;
@@ -10,7 +12,7 @@
 
 		/**
  		* initiating widget
- 		* @param {object} params 
+ 		* @param {object} params
  		* @param {object} formData
  		* @return undefined
  		*/
@@ -41,7 +43,7 @@
  		*/
 		function getDataForCalculation() {
 			var data = {};
-			return data; 
+			return data;
 		}
 
 		/**
@@ -54,7 +56,7 @@
 
 		/**
  		* set widget data when editing submissions
- 		* @param {generic} value 
+ 		* @param {generic} value
  		* @return undefined
  		*/
 		function setData(value) {
@@ -66,7 +68,7 @@
 		/**
  		* resize widget
  		* @param {int} height iFrame
- 		* @param {int} width iFrame  
+ 		* @param {int} width iFrame
  		* @return undefined
  		*/
 		function widgetResize(height, width) {
