@@ -106,17 +106,16 @@
 
 	}
 
-	window.Widget = __Widget;
-})();
-
-
-$(document).ready(function(){
-	JFCustomWidget.subscribe("ready", function(formData) {
-		var params = JFCustomWidget.getWidgetSettings();
-		var widget = new Widget();
-		widget.init(params, formData);
-		JFCustomWidget.subscribe("submit", function() {
-			JFCustomWidget.sendSubmit(widget.getData());
+	$(document).ready(function(){
+		JFCustomWidget.subscribe("ready", function(formData) {
+		  var params = JFCustomWidget.getWidgetSettings();
+			var widget = new __Widget();
+			widget.init(params, formData);
+			JFCustomWidget.subscribe("submit", function() {
+				JFCustomWidget.sendSubmit(widget.getData());
+			})
 		})
-	})
-});
+	});
+
+
+})();
